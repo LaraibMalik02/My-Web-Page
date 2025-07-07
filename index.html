@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>MY Blog</title>
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <h1 class="logo">Logo</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="btn">Click me</button>
+    </nav>
+
+
+
+    <div class="content">
+      <h1><span>Welcome</span><br>to <span>my Page</span></h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad tenetur magnam quaerat voluptates aperiam velit.
+      </p>
+      <div>
+        <button type="button">Option 1</button>
+        <button type="button">Option 2</button>
+      </div>
+    </div>
+  </div>
+
+  <!--End header-->
+
+  <!-- About Me Section -->
+  <div class="about">
+    <div class="about-wrapper">
+      <div class="about-img">
+        <img src="ui.jpg" alt="About Me Image">
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit
+          voluptatem accusantium doloremque. Nulla quis lorem ut libero malesuada feugiat.
+        </p>
+        <a href="about.html" class="btn">Read More</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Blog SEction-->
+  <div id="blog">
+
+    <div class="blog-sec">
+      <h5>My Recent Posts</h5>
+      <h3>MY Blog Post</h3>
+    </div>
+
+
+    <div class="card-container">
+
+      <div class="card">
+        <img src="ui.jpg" alt="">
+        <div class="card-content">
+          <h3>Blog 1</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="ny.jpg" alt="">
+        <div class="card-content">
+          <h3>Blog 2</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="bg.jpg" alt="">
+        <div class="card-content">
+          <h3>Blog 3</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+  <!-- End .card-container -->
+
+
+
+
+  <!----Contact Form----->
+
+  <div class="container-form">
+    <div class="contact-form">
+      <h2>Get in Touch</h2>
+      <form>
+        <label>Name</label>
+        <input type="text" required />
+        <label>Email</label>
+        <input type="email" required />
+        <label>Message</label>
+        <textarea required></textarea>
+        <button type="submit" src="www.google.com">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="lightbox">
+    <span id="close">&times;</span>
+    <img id="lightbox-img" src="ui.jpg" alt="lightbox" />
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My Blog</p>
+  </footer>
+
+
+
+
+  <!------JAVASCRIPT CODE--->
+
+  <script>
+
+    const images = document.querySelectorAll('.card img');
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('close');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+
+
+  </script>
+
+</body>
+
+</html>
